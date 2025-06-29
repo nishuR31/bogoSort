@@ -1,14 +1,29 @@
-import os
-import platform
+import time as t
+import random as r
 
-def shutdown():
-    system = platform.system()
-    if system == "Windows":
-        os.system("shutdown /s /t 0")
-    elif system == "Linux" or system == "Darwin":  # Darwin is macOS
-        os.system("sudo shutdown now")
-    else:
-        print("Unsupported OS")
+# Get number of elements
+size = int(input("Enter number of elements: "))
+ls = []
 
-if __name__ == "__main__":
-    shutdown()
+# Get input elements
+for i in range(size):
+    val = int(input(f"Enter value {i+1}: "))
+    ls.append(val)
+
+# Save sorted target
+target = sorted(ls)
+attempts = 0
+
+print("\nStarting BogoSort... Please wait ")
+
+start = t.time()
+while ls != target:
+    r.shuffle(ls)
+    attempts += 1
+end = t.time()
+
+# Output
+print("\nList successfully sorted!")
+print("Sorted List:", ls)
+print("Attempts   :", attempts)
+print("Time Taken:", round(end - start, 2), "seconds")
