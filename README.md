@@ -114,5 +114,5 @@ Same input/output behavior as Python version. Uses `readline/promises`.
 
 ## 🧾 License
 
-MIT License © 2025 [LICENSE](Licence)
+MIT License © 2025 [LICENSE](LICENSE)
 
